@@ -9394,12 +9394,23 @@ this.fire('dom-change');
 <body>
   <dom-module id="my-element">
     <template>
-      Test
+      <div>Test <span>[[count]]</span></div>
     </template>
     <script>
       addEventListener('WebComponentsReady', function() {
         Polymer({
-          is: 'my-element'
+          is: 'my-element',
+          properties: {
+            count: {
+              type: Number,
+              value: 0
+            }
+          },
+          ready: function() {
+            setInterval(function() {
+              this.setAttribute('count', Number(this.count) + 1);
+            }.bind(this), 125);
+          }
         });
       });
     </script>
