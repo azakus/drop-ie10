@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="bower_components/webcomponentsjs/dist/webcomponents-lite.js"></script>
+  <link rel="import" href="bower_components/polymer/polymer.html">
+  <title>Test</title>
+</head>
+<body>
+  <dom-module id="my-element">
+    <template>
+      Test
+    </template>
+    <script>
+      addEventListener('WebComponentsReady', function() {
+        Polymer({
+          is: 'my-element'
+        });
+      });
+    </script>
+  </dom-module>
+</body>
+</html>
